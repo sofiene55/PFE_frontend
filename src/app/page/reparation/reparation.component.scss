@@ -1,0 +1,202 @@
+.container
+{
+  padding: 16px;
+  max-width: 900px;
+
+  margin: 32px auto;
+  background-color: white;
+  border-radius: 16px;
+  .form-input-group
+  {
+    // display: flex;
+    margin-bottom: 16px;
+    input {
+      padding: 12px;
+      border-radius: 8px;
+      background-color: rgba(234, 231, 231, 0.373);
+      min-width: 280px;
+      margin-left: 8px;
+      border: 1px solid rgba(200, 220, 251, 0.492);
+      &:focus{
+        border: 1px solid red;
+
+      }
+    }
+    select{
+      padding: 12px;
+      border-radius: 8px;
+      background-color: rgba(234, 231, 231, 0.373);
+      min-width: 280px;
+      margin-left: 8px;
+      border: 1px solid rgba(200, 220, 251, 0.492);
+    }
+
+
+  }
+  .form-btn-group{
+
+    padding: 12px;
+    display: flex;
+    justify-content: end;
+    button{
+      background-color: rgb(78, 137, 135);
+      color: white;
+      padding: 12px;
+      align-self: flex-end;
+      border-radius: 6px;
+    }
+  }
+
+  .text{
+    // background-color: red;
+    padding: 16px;
+    min-width: 260px;
+    border-radius: 6px;
+   border: 1px solid rgba(205, 202, 202, 0.537);
+    }
+  // span{
+  //   border: 1px solid rgba(191, 188, 188, 0.434);
+  //   padding: 16px;
+  //   min-width: 100px;
+  //   margin-right: 24px;
+  // }
+
+
+}
+.terminate{
+  padding: 16px;
+
+  box-shadow: 0 0 3px rgba(188, 186, 186, 0.496);
+  background-color: white;
+
+  max-width: 400px;
+  margin:36px auto;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  h1{
+    font-weight: bolder;
+  }
+  .form-control{
+    margin-left: 12px;
+    textarea{
+      background-color: rgba(243, 239, 239, 0.326);
+      border-radius: 12px;
+
+      border: 1px solid rgb(152, 134, 134);
+      max-width: 240px;
+    }
+    select{
+      display: block;
+      padding: 12px;
+      background-color: rgba(227, 224, 224, 0.421);
+      border-radius: 8px;
+    }
+    button{
+      padding: 12px;
+      background-color: blue;
+      margin: 16px auto;
+      color: white;
+      border-radius: 4px;
+    }
+    .btn{
+      background-color: green;
+      color: white;
+      padding: 14px;
+      width: 48px;
+      height: 48px;
+      border-radius: 90px;
+      margin: 15px;
+    }
+    input{
+      display: block;
+      background-color: rgba(225, 214, 214, 0.348);
+      padding: 12px;
+      min-width: 280px;
+      border-radius: 8px;
+      border: 1px solid rgba(198, 196, 196, 0.463);
+    }
+  }
+
+  .list-tache{
+    min-height: 150px;
+    //max-height: 200px;
+    .fluid{
+      height: 200px;
+      overflow-y: scroll;
+      .item{
+        padding: 12px ;
+        border: 1px solid rgba(210, 206, 206, 0.538);
+        margin: 4px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+
+        i{
+
+          padding: 4px;
+          border-radius: 22px;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+textarea{
+  padding: 12px;
+  background-color: red;
+}
+
+.finish{
+  border: 1px solid rgba(139, 212, 139, 0.482);
+  padding: 8px;
+  margin: 4px;
+  display: flex;
+  border-radius: 6px;
+  justify-content: space-between;
+}
+
+.noFinish{
+  border: 1px solid rgba(253, 155, 155, 0.389);
+  padding: 8px;
+  margin: 4px;
+  display: flex;
+  border-radius: 6px;
+  justify-content: space-between;
+}
+
+.alerte{
+  margin: 12px 0;
+  padding: 12px;
+  background-color: green;
+  color: white;
+  border-radius: 8px;
+}
+
+.rond{
+  height: 4px;
+  width: 4px;
+  background-color: red;
+}
+
+@media only screen and (min-width:600px){
+  .form-input-group{
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+
+
+}
+
+@media only screen and (max-width:500px) {
+  label{
+    display: block;
+  }
+  textarea{
+    background-color: red;
+  }
+}

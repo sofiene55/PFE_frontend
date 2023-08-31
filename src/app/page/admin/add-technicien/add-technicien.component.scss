@@ -1,0 +1,85 @@
+.container{
+  padding: 18px;
+  background-color: white;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 0 2px rgba(233, 226, 226, 0.592);
+  margin: 36px auto;
+  h2{
+    text-align: center;
+  }
+
+  .contenu{
+    display: flex;
+    // justify-content: center;
+    .group{
+      // display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 550px;
+      margin: 8px;
+      .input-group{
+        label{
+          display: block;
+        }
+        input{
+          min-width: 250px;
+          padding: 12px;
+          border-radius: 8px;
+          // background-color: aliceblue;
+          border: 1px solid rgb(240, 228, 228);
+        }
+      }
+    }
+    .btn{
+
+      align-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: auto;
+      margin: auto;
+
+      max-width: 220px;
+      button{
+        background-color: green;
+        color: white;
+        padding: 12px;
+        min-width: 200px;
+        border-radius: 8px;
+        margin: 18px;
+        &:disabled{
+          background-color: red;
+          cursor: none;
+        }
+      }
+
+    }
+  }
+  .response{
+    border: 1px solid rgba(225, 220, 220, 0.375);
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 260px;
+
+    color: white;
+  }
+  .error{
+    background-color: red;
+  }
+  .sucess{
+    background-color: green;
+  }
+  .error-input{
+    border-color: red;
+    cursor: none;
+
+  }
+}
+
+@media only screen and (min-width:600px) {
+  .group{
+    display: flex;
+  }
+}

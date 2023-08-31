@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="fg"  >
+    <h1>
+      Authentification administrateur
+    </h1>
+    <div class="contenu" id="contenu">
+      <div class="form-group">
+        <label for="">username</label>
+        <input type="text" formControlName="username" placeholder="nom utilisateur">
+      </div>
+      <div class="form-group">
+        <label for="">password</label>
+        <input type="password" formControlName="password" placeholder="mot de passe">
+      </div>
+      <div id="error" class="error" *ngIf="error">
+        <i class="ri-error-warning-fill"></i> <span>vos coordonnées sont incorrecte</span>
+      </div>
+      <button (click)="login()">Connexion</button>
+    </div>
+  </form>
+</div>

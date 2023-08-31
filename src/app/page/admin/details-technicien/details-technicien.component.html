@@ -1,0 +1,137 @@
+<div class="container" *ngIf="data">
+  <div class="user" >
+    <div class="img">
+      <img src="../../../../assets/image/user.svg" alt="">
+    </div>
+    <div class="corps">
+      <div class="item">
+        <i class="ri-user-fill"></i> {{
+          data['name']
+        }}
+      </div>
+      <div class="item">
+        <i class="ri-map-pin-range-fill"></i>  {{
+          data['addresse']
+        }}
+      </div>
+      <div class="item">
+        <i class="ri-phone-line"></i>  {{
+          data['telephone']
+        }}
+      </div>
+      <div class="item">
+        <i class="ri-mail-send-fill"></i>  {{
+          data['email']
+        }}
+      </div>
+    </div>
+  </div>
+  <div class="container-div ">
+    <h2>
+      Statistique {{data['name']}}
+    </h2>
+    <div class="stat">
+      <div class="item-custom" >
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+
+        <div class="text" >
+          <p>Nouveau ticket</p>
+          <u>
+            {{
+              data['nouveau']
+            }}
+          </u>
+        </div>
+      </div>
+
+      <div class="item-custom">
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+
+        <div class="text">
+          <p>Ticket en cours</p>
+          <u>
+            {{
+              data['en cours']
+            }}
+          </u>
+        </div>
+      </div>
+
+      <div class="item-custom">
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+        <div class="text">
+          <p>Ticket Terminé</p>
+          <u>
+            {{
+              data['terminer']
+            }}
+          </u>
+        </div>
+      </div>
+      <div class="item-custom">
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+        <div class="text">
+          <p>Ticket Cloturé</p>
+          <u>
+            {{
+              data['cloturer']
+            }}
+          </u>
+        </div>
+      </div>
+      <div class="item-custom" >
+        <div class="icon">
+          <i class="ri-shield-user-fill"></i>
+        </div>
+
+        <div class="text" >
+          <p>Total tickets</p>
+          <u>
+            {{
+              data['cree']
+            }}
+          </u>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="liste-ticket" *ngIf="ticket!.length>0">
+    <h2>
+      {{label}} {{ data['name']}}
+    </h2>
+
+    <div class="ticket" >
+      <div class="item" *ngFor="let item of ticket">
+        <img src="../../../../assets/image/ticket.png" alt="">
+        <div class="contenu">
+          <span>
+            <h2>
+              {{item.titre}}
+            </h2>
+          </span>
+          <span>
+              {{item.urgenceLabel}}
+          </span>
+          <span>
+              {{item.date}}
+          </span>
+          <span>
+            {{item.status}}
+        </span>
+          <span>
+            {{item.adresse}}
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

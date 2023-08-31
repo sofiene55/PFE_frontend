@@ -1,0 +1,101 @@
+<div class="container">
+ <div class="title">
+  <h2>
+    Quelques Statistique de la plate forme Hub Service
+  </h2>
+ </div>
+ <div class="contenu" *ngIf="data">
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-shield-user-fill"></i>
+    </div>
+    <div class="text">
+      <p> Total Technicien</p>
+      <u>
+        {{
+          data['nombre technicien']
+        }}
+      </u>
+    </div>
+  </div>
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-user-line"></i>
+    </div>
+    <div class="text">
+      <p> Total Utilisateur</p>
+      <u>
+        {{
+          data['nombre user']
+        }}
+      </u>
+    </div>
+
+  </div>
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-ticket-line"></i>
+    </div>
+    <div class="text">
+      <p> Ticket enregistré</p>
+      <u>
+        {{
+          data['total ticket']
+        }}
+      </u>
+    </div>
+  </div>
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-ticket-fill"></i>
+    </div>
+    <div class="text">
+      <p> Ticket Cloturé</p>
+      <u>
+        {{
+          data['cloturer']
+        }}
+      </u>
+    </div>
+  </div>
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-ticket-fill"></i>
+    </div>
+    <div class="text">
+      <p> Ticket Terminer</p>
+      <u>
+        {{
+         data['terminer']
+        }}
+      </u>
+    </div>
+  </div>
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-shield-user-fill"></i>
+    </div>
+    <div class="text">
+      <p>Ticket en cours</p>
+      <u>
+        {{
+          data['en cours']
+        }}
+      </u>
+    </div>
+  </div>
+  <div class="item-custom">
+    <div class="icon">
+      <i class="ri-chat-new-line"></i>
+    </div>
+    <div class="text">
+      <p>Nouveau tickets</p>
+      <u>
+        {{
+          data['nouveau']
+        }}
+      </u>
+    </div>
+  </div>
+ </div>
+</div>

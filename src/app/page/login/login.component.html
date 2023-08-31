@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="section-asset">
+
+  </div>
+  <div class="content">
+
+    <form [formGroup]="fg" >
+      <h1>Authentification</h1>
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="Email">Mot de passe</label>
+        <div class="password">
+          <input [type]="disabledPassword"  class="form" formControlName="password"><i class="ri-eye-line" *ngIf="disabledPassword=='password'" (click)="onSwitchPassword()"></i><i class="ri-eye-off-line" *ngIf="disabledPassword=='text'" (click)="onSwitchPassword()"></i>
+        </div>
+      </div>
+      <p class="text">
+        <span> <input type="checkbox" formControlName="forgot"> se souvenir </span>
+        <span> <a href="">mot de passe oublié</a> </span>
+      </p>
+      <div class="btn">
+        <button mat-button (click)="onLogin() " [disabled]="fg.invalid"><i class="ri-login-circle-line"></i>Connexion</button>
+        <button mat-button routerLink="/create-account">Créer un compte</button>
+      </div>
+      <!-- <p class="link">  <a routerLink="/create-account">Créez un nouveaux Compte ?</a> </p> -->
+
+      <div class="message"  *ngIf="messageError" ><i class="ri-error-warning-fill"></i>
+         {{message}}
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(242, 240, 240);
+
+}
+
+
+i{
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.search-group{
+
+}
+
+.section{
+  max-width: 65vw;
+  background-color: white;
+  padding: 26px;
+  margin:22px auto;
+  border-radius: 16px;
+  box-shadow: 0 0 3px silver;
+  flex-wrap: wrap;
+  .title{
+    color: blue;
+    padding: 4px;
+    text-transform: uppercase;
+
+  }
+  img{
+    max-width: auto;
+    max-height: 180px;
+  }
+}
+
+.alerte-succes{
+  background-color: green;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 0 auto;
+  color: white;
+}
+
+.active{
+  background-color: rgb(28, 48, 70);
+  color: white;
+}
+
+.active1{
+  background-color: rgb(56, 56, 80);
+  border-radius: 33px;
+  color: white;
+}
+
+
+/* Pour les navigateurs WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: #224166;
+  /* Couleur de la poignée de la scrollbar */
+}
+
+/* Pour Firefox */
+::-moz-scrollbar {
+  width: 10px;
+  /* Largeur de la scrollbar */
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #888;
+  /* Couleur de la poignée de la scrollbar */
+}
+
+.password{
+
+  display: flex;
+
+  align-items: center;
+  // justify-content: center;
+  i{
+
+    transform: translateX(-130%);
+    cursor: pointer;
+    &:hover{
+      color: red;
+    }
+  }
+}
+
+.item-custom{
+  margin: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // border: 1px solid rgba(190, 184, 184, 0.426);
+  padding: 12px;
+  border-radius: 16px;
+  max-width: 260px;
+  min-width: 260px;
+  .icon{
+    margin: auto 2px;
+    display: flex;
+    i{
+      font-size: 36px;
+      color: blue;
+    }
+  }
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    u{
+        text-decoration: none;
+        font-size: 36px;
+        font-weight: bolder;
+        text-align: center;
+    }
+  }
+
+  box-shadow:  0 0 10px silver;
+
+}
+
+@media only screen and (max-width:400px) {
+  .alerte-succes{
+    display: inline-block;
+
+  }
+}

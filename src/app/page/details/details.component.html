@@ -1,0 +1,99 @@
+
+<app-listener-circular *ngIf="!ticket">
+
+</app-listener-circular>
+
+<div class="container" *ngIf="ticket">
+  <div class="section-1" >
+    <div class="asset">
+      <img src="../../../assets/image/ticket.png" alt="">
+    </div>
+    <div class="corps">
+
+      <h3>
+        <span>Titre</span>
+        <span> {{ticket!.titre}} </span>
+      </h3>
+
+      <div class="contenu-item">
+        <span>Description</span>
+        <p>
+          {{ticket!.description}}
+        </p>
+      </div>
+      <p class="item-horizontal">
+        <span class="state">
+          {{ticket!.status}}
+        </span>
+        <span class="state">
+          {{ticket!.urgenceLabel}}
+        </span>
+      </p>
+
+      <p class="item-horizontal">
+        <span>Date Création</span><span> {{ticket!.date}} </span>
+      </p>
+
+      <p class="item-horizontal">
+        <span>Catégorie</span><span> {{ticket!.categorie}}</span>
+      </p>
+
+      <p class="btn-group" *ngIf="ticket!.status=='Terminer'">
+        <button (click)="rejectSolution()">Refuser</button><button (click)="acceptSolution()">Accepter Solution</button>
+      </p>
+
+
+    </div>
+  </div>
+  <div class="section-1" *ngIf="technicien" >
+    <div class="asset">
+      <img src="../../../assets/image/ticket.png" alt="">
+    </div>
+    <div class="corps">
+      <h3>
+        INFORMATION TECHNICIEN
+      </h3>
+
+
+
+
+      <p class="item-horizontal">
+        <span class="">
+          Nom
+        </span>
+        <span class="">
+          {{technicien!.name}}
+        </span>
+      </p>
+
+      <p class="item-horizontal">
+        <span><i class="ri-phone-fill"></i> </span><span>{{technicien.number}}</span>
+      </p>
+
+      <p class="item-horizontal">
+        <span>Adresse</span><span> {{technicien.adresse}} </span>
+      </p>
+
+
+    </div>
+  </div>
+
+  <div class="section-1 section-tache" *ngIf="ticket && ticket.tache.length>0 || ticket!.solution  ">
+    <h1>
+      Liste des taches à realiser
+    </h1>
+    <div class="solution" *ngIf="ticket!.solution">
+      <p>Solution</p>
+      <span>
+        {{ticket!.solution}}
+      </span>
+    </div>
+    <div class="contenu" *ngIf="ticket!.tache.length>0">
+      <div class="item" *ngFor="let item of ticket!.tache">
+       <span> {{item.message}}</span>
+       <span [ngStyle]="{'color':item.etat==false?'red':'green'}"> {{item.etat==false?'En cours':'Terminer'}} </span>
+      </div>
+    </div>
+  </div>
+
+</div>

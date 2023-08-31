@@ -1,0 +1,124 @@
+
+.container{
+  max-width: 900px;
+  min-height: 400px;
+  display: flex;
+  background-color: white;
+  box-shadow: 0 0  2px rgba(192, 192, 192, 0.512);
+  margin: 14vh auto;
+  padding: 22px;
+  border-radius: 16px;
+  justify-content: space-evenly;
+  .section-asset{
+    display: block;
+    background-image: url("../../../assets/image/authentification.svg");
+    width: 400px;
+    background-repeat: no-repeat;
+
+  }
+  .btn{
+    justify-content: space-between;
+   flex-wrap: wrap;
+    display: flex;
+  }
+
+
+
+  .content{
+    min-width: 350px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+    height: 38vh;
+
+    h1{
+      color: rgb(24, 38, 67);
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    label{
+      display: block;
+    }
+    .form-group{
+      margin-bottom: 16px;
+      // background-color: red;
+      width: 350px;
+    }
+    input[type="text"],input[type="password"]{
+      padding: 14px;
+      min-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(54, 50, 50, 0.141);
+    }
+
+    input[type="checkbox"]{
+      padding: 8px;
+      background-color: red;
+    }
+
+    .text{
+      justify-content: space-between;
+      display: flex;
+      span{
+        color: red;
+
+      }
+    }
+    button{
+      cursor: pointer;
+      padding: 8px;
+      background-color: rgb(20, 26, 50);
+      color: white;
+      width: 148px;
+      transition: scale 200ms linear;
+      &:hover{
+        scale: 1.05;
+      }
+      &:disabled{
+        cursor: none;
+        background-color: silver;
+      }
+    }
+            p {
+            a {
+
+
+                &:hover {
+                  color: blue
+                }
+              }
+            }
+  }
+
+  .message{
+    background-color: rgb(236, 103, 103);
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    span{
+      margin-right: 26px;
+    }
+  }
+
+}
+
+@media only screen and (max-width:400px) {
+
+  .container{
+    max-width: 310px;
+
+    .content {
+
+        max-width: 320px;
+
+        .form-group {
+          max-width: 270px;
+        }
+      }
+  }
+
+
+
+}

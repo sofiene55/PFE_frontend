@@ -1,0 +1,75 @@
+<div class="header" >
+  <div class="titre">
+    <h2> Tous mes tickets </h2>
+  </div>
+  <!-- <div class="pad-filtre">
+    <mat-form-field>
+      <mat-label>Trier par</mat-label>
+      <mat-select disableRipple>
+        <mat-option value="1">Option 1</mat-option>
+        <mat-option value="2">Option 2</mat-option>
+        <mat-option value="3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+
+
+</div>
+<div class="search password">
+  <span><input type="text" placeholder="chercher un ticket de réparation" #search (input)="onSearch(search.value)" ></span>
+
+</div>
+<section class="section section-2">
+  <div class="type">
+    <span [ngClass]="currentType=='Tous'?'active':''" (click)="onFocus('Tous')">
+      Tous
+    </span>
+    <span [ngClass]="currentType=='En cours'?'active':''" (click)="onFocus('En cours')">
+      En cours
+    </span>
+    <span [ngClass]="currentType=='Terminer'?'active':''" (click)="onFocus('Terminer')">
+      Terminer
+    </span>
+    <span [ngClass]="currentType=='Cloturer'?'active':''" (click)="onFocus('Cloturer')">
+      Cloturer
+    </span>
+  </div>
+
+ </section>
+<div class="img" *ngIf="tickets.length==0 && search.value!=''">
+  <img src="../../../assets/image/found.svg"  alt="">
+ </div>
+
+
+<div class="content-container" >
+  <app-listener-circular *ngIf="listener"></app-listener-circular>
+  <div class="" *ngFor="let item of tickets">
+    <div class="test item" *ngIf="currentType=='Tous'|| (currentType==item.status) ">
+      <img src="../../../assets/image/ticket.png" alt="">
+    <h3 style="margin-bottom: 1px; color: red;font-weight: bolder;">
+      {{item.titre}}
+    </h3>
+    <p>
+      <span><i class="ri-calendar-fill"></i>Date</span><span> {{item.date}} </span>
+    </p>
+    <p>
+      <span><i class="ri-refresh-line"></i>status</span><span  [ngClass]="item.status=='Terminer'||item.status=='Cloturer'?'etat-3':item.status=='Nouveau'?'etat-1':'etat-2'">{{item.status}}</span>
+    </p>
+    <p>
+      <span><i class="ri-alarm-warning-line"></i> urgence </span><span >{{item.urgenceLabel}}</span>
+    </p>
+    <p>
+      <span><i class="ri-refresh-line"></i>Categorie</span><span >{{item.categorie}}</span>
+    </p>
+    <p>
+      <span><i class="ri-phone-line"></i>Numero</span><span >{{item.numero }}</span>
+    </p>
+
+    <div class="action">
+      <span routerLink="/update-ticket/{{item.id}}" *ngIf="role=='TECH'"><i class="ri-edit-box-line"></i>Modifier</span>
+      <span (click)="deleteTicket(item.id!)" *ngIf="role=='ADMIN'"><i class="ri-close-line"></i>Supprimer</span>
+      <span routerLink="/details/{{item.id}}"><i class="ri-eye-line"></i>Consulter</span>
+    </div>
+  </div>
+    </div>
+</div>

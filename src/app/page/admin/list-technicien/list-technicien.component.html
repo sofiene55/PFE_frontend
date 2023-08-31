@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="list">
+    <div class="item" *ngFor="let item of data" >
+      <div class="contenu">
+        <img src="../../../../assets/image/user.svg" alt="">
+        <p>
+          <span>
+            <i class="ri-pass-valid-line"></i> {{item.name}}
+          </span>
+        </p>
+        <p>
+          <span>
+            <i class="ri-phone-line"></i>{{item.number}}
+          </span>
+        </p>
+        <p>
+          <span>
+            <i class="ri-mail-line"></i> {{item.email}}
+          </span>
+        </p>
+
+        <p class="button">
+          <i class="ri-information-line" (click)="details(item.id!)"></i>
+          <i class="ri-delete-bin-6-line" (click)="deleteTechnicien(item.id!)"></i>
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+<div class="container-1">
+
+  <div class="carousel">
+    <div class="asset">
+
+    </div>
+
+    <div class="body">
+      <div class="titre">Bonjour Nous vous souhaitons la bienvenue sur Hub-service</div>
+
+      <div class="btn">
+        <button  (click)="onScroll()">Visitez</button>
+        <span routerLink="/login" *ngIf="!auth.isAuth"><i class="ri-login-box-fill"></i>Se connecter</span>
+        <span routerLink="/create-account"  *ngIf="!auth.isAuth"><i class="ri-logout-circle-r-line"></i>Inscription</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="activité" *ngIf="auth.isAuth && auth.getRolel()=='USER' " >
+
+
+    <div class="group">
+      <div class="item">
+        <div class="img">
+          <i class="ri-list-settings-line i"></i>
+        </div>
+        <div class="text"><span class="nombre "> {{stat?.nombreTotal}} </span><span>Total Ticket</span></div>
+      </div>
+      <div class="item">
+        <div class="img">
+          <i class="ri-play-list-2-fill i" style="color: red;"></i>
+        </div>
+        <div class="text"><span class="nombre"> {{stat?.ticketEncours}} </span><span>En cours de traitement</span></div>
+      </div>
+    </div>
+    <div class="group">
+      <div class="item">
+        <div class="img">
+          <i class="ri-check-double-line i" style="color: green;"></i>
+        </div>
+        <div class="text"><span class="nombre">{{stat?.nombreTerminer}}</span><span>Ticket Terminé</span></div>
+      </div>
+      <div class="item">
+        <div class="img">
+          <img src="../../../assets/image/list.svg" alt="">
+        </div>
+        <div class="text"><span class="nombre"> {{stat?.ticketEnAttente}} </span><span>Non Prise en charge</span></div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="dernier activité" *ngIf="auth.isAuth && data && auth.getRolel()=='USER'">
+    <h2 style="font-weight: bolder;font-size: 36px;">
+      Mes derniers tickets
+    </h2>
+    <div class="liste">
+      <div class="item" *ngFor="let item of data" >
+        <div class="text">
+          <h4 style="font-weight: bolder;">
+            {{item.title}}
+          </h4>
+          <div class="element-item">
+            <span><i class="ri-calendar-line"></i></span>
+            <span>{{item.date}}</span>
+          </div>
+          <div class="element-item">
+            <span><i class="ri-donut-chart-fill"></i></span>
+            <span> {{item.status}} </span>
+          </div>
+          <div class="element-item">
+            <span><i class="ri-alarm-warning-line"></i></span>
+            <span> {{item.urgence==1?'Urgence basse':item.urgence==2?'Urgence moyenne':'urgence élevée'}} </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activité"  *ngIf="auth.isAuth">
+
+   <div class="add" routerLink="/add-ticket">
+    <img width="200" src="../../../assets/image/add-ticket.svg" alt="">
+    <div class="single">
+      <h3 routerLink="/add-ticket" style="font-size: 26px;">
+        Ajoutez Un Nouveau article
+      </h3>
+    </div>
+
+
+   </div>
+
+
+  </div>
+  <section class="section">
+    <div>
+      <div class="title">
+        <h3 >
+          Expert En maintenance Informatique
+        </h3>
+      </div>
+      <div class="corps">
+        <img src="../../../assets/image/image1.png" alt="">
+        Les prestations de Hub-Services s'ajustent à la complexité et à l'interopérabilité de votre système informatique. Pourtant, un bureau d'étude de 5 personnes ou une PME de plusieurs centaines de collaborateurs ont, dans les 2 cas, besoin de ne pas se tromper, ni dans le choix du prestataire, ni dans les orientations proposées.
+
+<br><br> Seule la volumétrie va fluctuer, pas la méthodologie. Et ce avec des coûts clairs et maitrisés.
+<br><br>
+Hub-Services assurera autant de soin et de conseil à une TPE qu'à une grosse PME.
+        </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div>
+      <div class="title">
+        <h3 >
+          Expert En maintenance Informatique
+        </h3>
+      </div>
+      <div class="corps">
+        Le système informatique représente aujourd'hui la clé de voûte d'une entreprise. Invisible quand tout va bien, le moindre dysfonctionnement engendre une perte de productivité, des dépenses importantes et le risque de perte d'indicateurs ou de données informatiques vitales
+      </div>
+    </div>
+  </section>
+
+  <div class="container-fluid">
+    <div class="contenu">
+      <div class="img">
+        <img src="../../../assets/image/expertise.png" alt="">
+      </div>
+      <h3>EXPERTISE</h3>
+      <span>
+        Expert depuis 10 ans sur le marché de la maintenance informatique, Hub Services propose aux entreprises, une équipe en
+        temps partagé représentant les différents corps de métier du système d'information, alliant les compétences techniques
+        et l'expérience professionnelle issue du brassage multi-entreprises de nos différents clients.
+        L'infogérance Hub Services intéresse directement les entreprises qui souhaitent optimiser leur fonctionnement et
+        partager les coûts et les prestations d'un service informatique.
+      </span>
+    </div>
+    <div class="contenu">
+      <div class="img">
+        <img src="../../../assets/image/equipe.png" alt="">
+      </div>
+      <h3>UNE EQUIPE DEDIEE</h3>
+      <span>
+        Une équipe informatique dédiée Hub Services offre aux TPE, PME et Collectivités un accompagnement personnalisé, à
+        travers ses contrats annuels d'Assistance technique en Temps partagé à la volumétrie adaptée.
+        Les entreprises disposent ainsi, d'une équipe informatique réactive, dédiée à leur entreprise, qui agit comme l'un de
+        leurs salariés, l'un de leurs services.
+      </span>
+    </div>
+    <div class="contenu">
+      <div class="img">
+        <img src="../../../assets/image/productivite.png" alt="">
+      </div>
+      <h3>EXPERTISE</h3>
+      <span>
+        Grâce à ce concept, les PME bénéficient aujourd'hui, sans recruter formellement, d'un suivi soutenu de leur système
+        informatique et d'un moyen d'échapper à une externalisation des services épisodique, onéreuse et mal ajustée.
+      </span>
+    </div>
+  </div>
+
+</div>

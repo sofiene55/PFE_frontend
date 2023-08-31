@@ -1,0 +1,10 @@
+.container{
+  background-color: green;
+  color: white;
+  padding: 16px;
+  // border-radius: 16px;
+  .contenu{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

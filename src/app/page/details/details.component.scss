@@ -1,0 +1,115 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+
+  .section-1{
+    min-height: 450px;
+    min-width: 300px;
+    max-width: 370px;
+    padding: 18px;
+    border-radius: 16px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 4px silver;
+    margin: 20px;
+    flex-direction: column;
+    .asset{
+      max-height: 200px;
+      width: 200px;
+    }
+
+    .corps{
+
+      .contenu-item{
+        span{
+          font-size: 22px;
+          color: rgb(37, 37, 74);
+        }
+        p{
+          padding: 6px;
+          border-radius: 12px;
+          border: 1px solid rgba(123, 122, 122, 0.195);
+        }
+      }
+      .item-horizontal{
+        border: 1px solid rgba(83, 119, 156, 0.459) ;
+        padding: 8px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        .state{
+
+
+          color: red;
+          padding: 4px;
+          padding-left: 11px;
+          padding-right: 11px;
+          border-radius: 18px;
+        }
+
+      }
+
+    }
+
+    .contenu{
+      max-height: 400px;
+      overflow-y: scroll;
+      .item{
+        padding: 18px;
+        border: 1px solid rgba(202, 202, 202, 0.353);
+        display: flex;
+        justify-content: space-evenly;
+        &:first-child{
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+        }
+        &:last-child{
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+        }
+      }
+    }
+
+  }
+  .btn-group{
+    display: flex;
+    justify-content: space-evenly;
+    button{
+      padding: 12px;
+      background-color: rgb(35, 72, 52);
+      color: white;
+      border-radius: 26px;
+      border: 2px solid rgb(105, 101, 101);
+    }
+  }
+
+  .section-tache{
+    max-height: 300px;
+    display: flex;
+
+    justify-content: center;
+    h1{
+      font-weight: bolder;
+    }
+    .solution{
+      display: block;
+      margin-bottom: 16px;
+      p{
+        color: red;
+        font-weight: bold;
+
+      }
+      span{
+        // border: 1px solid rgba(88, 83, 83, 0.645);
+        padding: 8px;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        z-index: 10;
+      }
+    }
+  }
+}

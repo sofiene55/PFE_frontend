@@ -1,0 +1,26 @@
+
+
+.creer{
+  cursor: pointer;
+  &:disabled{
+    background-color: silver;
+    cursor: none;
+  }
+}
+
+.background{
+  background-color: rgb(255, 255, 255);
+}
+
+.alerte-1{
+  // width: 800px;
+  background-color: rgb(255, 136, 136);
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  justify-content: center;
+  display: flex;
+  span{
+    margin-left: 16px;
+  }
+}

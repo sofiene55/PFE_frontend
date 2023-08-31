@@ -1,0 +1,27 @@
+<div class="navbar">
+  <h2>
+    Section Administration
+  </h2>
+  <div class="header">
+    <ul>
+      <li (click)="changeMenu('liste')" [ngClass]="componentView=='liste'?'active_':''" routerLink="/admin"> <i class="ri-play-list-2-line"></i>Technicien</li>
+      <li (click)="changeMenu('utilisateur')" [ngClass]="componentView=='utilisateur'?'active_':''" routerLink="/utilisateur"> <i class="ri-play-list-2-line"></i>Utilisateur</li>
+      <li (click)="changeMenu('add')" [ngClass]="componentView=='add'?'active_':''" routerLink="add-technicien"><i class="ri-add-circle-fill"></i> Nouveau Technicien</li>
+      <li (click)="changeMenu('liste-ticket')" routerLink="admin-ticket/admin" [ngClass]="componentView=='liste-ticket'?'active_':''">
+        <i class="ri-play-list-2-line"></i>
+        Ticket
+      </li>
+
+      <li (click)="changeMenu('stat')" routerLink="stat" [ngClass]="componentView=='stat'?'active_':''">
+        <i class="ri-bar-chart-line"></i>
+        Statistique
+      </li>
+
+      <li (click)="deconnexion()">
+        <i class="ri-logout-circle-line"></i>
+        Deconnexion
+      </li>
+
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,162 @@
+<app-listener-circular *ngIf="!ticket"></app-listener-circular>
+<div class="container"  *ngIf="ticket"  >
+
+
+  <div class="form">
+    <form [formGroup]="fg!">
+      <div class="modification" *ngIf="ticket && type==1">
+        <h1>Moodification {{ticket.titre}}</h1>
+        <div class="form-input-group">
+
+          <div class="form-input">
+            <label for=""> Date d'ouverture</label>
+            <input type="date" formControlName="date" [disabled]="isDisabled">
+          </div>
+          <div class="form-input">
+            <div class="text">
+              <label for="">Crée par</label>
+            <span> {{name}} </span>
+            </div>
+          </div>
+        </div>
+        <div class="form-input-group">
+
+          <div class="form-input">
+            <label for=""> Temps Prise en chage</label>
+            <input type="date">
+          </div>
+          <div class="form-input">
+            <label for="">Temps résolution</label>
+            <input type="text">
+          </div>
+        </div>
+        <div class="form-input-group">
+
+          <div class="form-input">
+            <label for=""> Type</label>
+            <select name="" id="" formControlName="type">
+              <option value="Incident">Incident</option>
+              <option value="Demande">Demande</option>
+            </select>
+          </div>
+          <div class="form-input">
+            <label for=""> Categorie</label>
+            <select name="" id="">
+              <option *ngFor="let item of service.categorie" [value]="item.label">{{item.label}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-input-group">
+
+          <div class="form-input">
+            <label for=""> Urgence</label>
+            <select name="" id="" formControlName="urgence">
+              <option value="Urgence élevée">Urgence élevée</option>
+              <option value="Urgence Moyenne">Urgence Moyenne</option>
+              <option value="Urgence basse">Urgence Basse</option>
+            </select>
+          </div>
+          <div class="form-input">
+            <label for=""> Impact</label>
+            <select name="" id="">
+              <option value="Haute">Haute</option>
+              <option value="Moyenne">Moyenne</option>
+              <option value="Basse">Basse</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-input-group">
+
+          <div class="form-input">
+            <label for=""> Status</label>
+            <select id="" formControlName="status">
+              <option [value]="item" *ngFor="let item of service.status">{{item}}</option>
+
+            </select>
+          </div>
+          <div class="form-input">
+            <label for=""> Attribuer à </label>
+            <select name="" id="" formControlName="technicien">
+              <option value="Sois même">Sois Même</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-btn-group">
+          <div class="alerte-succes" *ngIf="showAlerte">
+            <span><i class="ri-shield-check-fill"></i></span>
+            <span>Ticket Modifier Avec Succés</span>
+          </div>
+          <button (click)="onAttribute()"><i class="ri-save-3-line"></i>Enregistrer</button>
+        </div>
+      </div>
+
+    <div class="terminate" *ngIf="type==4">
+      <h1>Solution finale</h1>
+
+        <div class="form-control">
+          <label for="">Ajouter la solution finale</label>
+          <textarea  cols="40" rows="4"  formControlName=solution ></textarea>
+        </div>
+        <div class="form-control">
+          <label for="">Changez le status</label>
+          <select id="" formControlName="status">
+            <option [value]="item" *ngFor="let item of service.status"> {{item}} </option>
+          </select>
+          <div class="alerte" *ngIf="showAlerte">
+            <span>
+              <i class="ri-checkbox-circle-line"></i>
+            </span>
+            <span>
+              Ticket marqué comme terminé
+            </span>
+          </div>
+          <button (click)="closeTicket()"><i class="ri-save-line"></i>Enregistrer</button>
+        </div>
+
+    </div>
+  </form>
+  </div>
+
+
+</div>
+
+
+<div class="terminate" *ngIf="type==3">
+  <h1>Ajouter une nouvelle tâche</h1>
+  <form action="">
+    <!-- <div class="form-control">
+      <label for="">Ajouter la solution finale</label>
+      <button class="btn">
+        <i class="ri-add-line"></i>
+      </button>
+    </div> -->
+    <div class="form-control">
+      <label for="">Nouvealle tache</label>
+      <input type="text" #tache>
+    </div>
+    <div class="form-control">
+
+      <button (click)="addTache(tache.value)"><i class="ri-save-line"></i>Ajouter tache</button>
+    </div>
+  </form>
+  <div class="list-tache">
+    <div class="fluid">
+      <div class="" *ngFor="let item of ticket!.tache" [ngClass]="item.etat?'finish':'noFinish'">
+        {{item.message}}
+        <span class="state">
+          {{item.etat==false?'En cours':'Terminer'}}
+
+
+        </span>
+        <span>
+
+          <i class="ri-donut-chart-line" (click)="switchState(item.message!)" *ngIf="item.etat"></i>
+          <i class="ri-check-fill" (click)="switchState(item.message!)" *ngIf="!item.etat"></i>
+          <i class="ri-delete-bin-6-line" (click)="removeTache(item.message)"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+
+<div class="container">
+  <div class="asset"></div>
+  <div class="form">
+    <form  [formGroup]="fg!" >
+
+      <div class="form-group-input">
+        <div class="form-group">
+          <label for="">Titre ticket </label>
+          <input class="form"  type="text" formControlName="title">
+        </div>
+        <div class="form-group">
+          <label for="">Date</label>
+          <input class="form"  type="date" formControlName="date">
+        </div>
+      </div>
+
+      <div class="form-group-input">
+        <div class="form-group">
+          <label for="">Adresse </label>
+          <input class="form"  type="text" formControlName="adresse" >
+        </div>
+        <div class="form-group">
+          <label for="">Numéro</label>
+          <input class="form"  type="tel" formControlName="numero">
+        </div>
+      </div>
+
+      <div class="form-group-input">
+        <div class="form-group">
+          <label for="">Categorie</label>
+          <select  id="" formControlName="categorie">
+            <option value="Choisir" disabled>Choisir</option>
+            <option *ngFor="let item of service.categorie" [value]="item.label"> {{item.label}} </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Urgence </label>
+          <select name="" id="" formControlName="urgence">
+            <option  selected disabled value="">Choisir</option>
+            <option value="1" >Urgence Très Haute</option>
+            <option value="2">Urgence Moyenne</option>
+            <option value="3">Urgence Basse</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group-input">
+        <div class="form-group">
+          <label for="">Type </label>
+          <select name="" id="" formControlName="type">
+            <option value="" selected="selected">Choisir</option>
+            <option value="1">Incident </option>
+            <option value="2">Demande</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Lieu </label>
+          <select name="" id="" formControlName="lieu">
+            <option value="" selected="selected">Choisir</option>
+            <option value="1">Domicile</option>
+            <option value="2">Bureau</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="">Description</label>
+        <textarea name="" id="" cols="74" rows="3" formControlName="description"></textarea>
+      </div>
+      <div class="md:col-span-5 alerte" *ngIf="messageShow">
+        <i class="ri-checkbox-circle-fill"></i>
+        Votre ticket a été enregistré
+      </div>
+
+      <div class="form-group">
+        <button class="btn" [disabled]="fg!.invalid" (click)="addTicket()" ><i class="ri-save-2-line"></i> Enregistrer</button>
+
+      </div>
+
+
+    </form>
+  </div>
+</div>

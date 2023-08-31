@@ -1,0 +1,53 @@
+.container{
+  background-color: white;
+  padding: 18px;
+  max-width: 500px;
+  margin: 62px auto;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  .contenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+      text-align: center;
+    }
+    .i{
+      color: green;
+      font-size: 56px;
+      margin: auto;
+    }
+    label{
+      margin-top: 16px;
+      display: block;
+    }
+
+    input{
+      padding: 12px;
+      border: 1px solid rgb(183, 182, 182);
+      min-width: 270px;
+      border-radius: 8px;
+    }
+
+    button{
+      padding: 16px;
+      color: white;
+      background-color: green;
+      margin-top: 8px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.error{
+  background-color: red;
+  color: white;
+  margin:18px 0px;
+  padding: 12px;
+  border-radius: 4px;
+  i{
+    size: 16px;
+    color: white;
+  }
+}

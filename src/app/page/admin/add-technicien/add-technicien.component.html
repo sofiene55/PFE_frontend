@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>
+    Ajouter un technicien
+  </h2>
+  <div class="contenu">
+
+    <form [formGroup]="fg">
+      <div class="group">
+        <div class="input-group">
+          <label for="">Nom complet</label>
+          <input type="text" formControlName="name"  >
+        </div>
+        <div class="input-group">
+          <label for="">Numero</label>
+          <input type="tel" formControlName="number">
+        </div>
+      </div>
+       <div class="group">
+        <div class="input-group">
+          <label for="">Email</label>
+          <input type="text" formControlName="email">
+        </div>
+        <div class="input-group">
+          <label for="">Adresse</label>
+          <input type="tel" formControlName="adresse">
+        </div>
+      </div>
+       <div class="group">
+        <div class="input-group">
+          <label for="">Mot de passe</label>
+          <input class="error-input" type="password" formControlName="pwd" #password_>
+        </div>
+        <div class="input-group">
+          <label for="">Confirmer</label>
+          <input type="password" formControlName="confirm" #confirm_ (focus)="validConfirm()" [ngStyle]="{'border-color':(password_.value!=confirm_.value && password_.value.length>0 )?'red':''}">
+        </div>
+      </div>
+      <!-- <div class="group">
+        <div class="input-group">
+          <label for="">Nom utilisateur admin</label>
+          <input type="text" formControlName="userName" minlength="5">
+        </div>
+        <div class="input-group">
+          <label for="">Mot de passe admin</label>
+          <input type="text" formControlName="userPwd">
+        </div>
+      </div> -->
+      <div *ngIf="responseType!=-1" class="response" [ngClass]="responseType==0?'error': responseType==1?'sucess':''">
+        <span><i class="ri-check-line"></i></span>
+        <span>{{message}}</span>
+      </div>
+      <div class="btn">
+        <button (click)="addUser(password_.value,confirm_.value)" [disabled]="fg.invalid" [ngClass]="!valid?'error-input':''"><i class="ri-user-follow-line"></i>Ajouter</button>
+      </div>
+    </form>
+
+  </div>
+</div>

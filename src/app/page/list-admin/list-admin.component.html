@@ -1,0 +1,72 @@
+<app-listener-circular *ngIf="!tickets"></app-listener-circular>
+<div class="container-fluid" *ngIf="tickets">
+  <div class="search">
+
+    <div class="search-group">
+      <input type="text" class="form-control" placeholder="Cherchez un ticket par nom" style="max-height: 60px;" #name (input)="onSearch(name.value)" >
+
+    </div>
+
+
+
+  </div>
+  <div class="type">
+    <div class="item" [ngClass]="currentState=='Tous'?'active1':''" (click)="onFocus('Tous')" > <i class="ri-loader-4-line"></i>Tous</div>
+    <div class="item"  [ngClass]="currentState=='Nouveau'?'active1':''" (click)="onFocus('Nouveau')"> <i class="ri-menu-add-fill"></i>Nouveau</div>
+    <div class="item"  [ngClass]="currentState=='En cours'?'active1':''" (click)="onFocus('En cours')"> <i class="ri-menu-add-fill"></i>En cours</div>
+    <div class="item"  [ngClass]="currentState=='Terminer'?'active1':''" (click)="onFocus('Terminer')"> <i class="ri-menu-add-fill"></i>Terminé</div>
+    <div class="item"  [ngClass]="currentState=='Cloturer'?'active1':''" (click)="onFocus('Cloturer')"> <i class="ri-menu-add-fill"></i>Cloturé</div>
+
+  </div>
+  <div class="type">
+    <div class="item" (click)="onFocus2(3)"  [ngClass]="currentState2==3?'active1':''"> <i class="ri-alarm-warning-line"></i>Urgence élevée</div>
+    <div class="item" (click)="onFocus2(2)"  [ngClass]="currentState2==2?'active1':''"><i class="ri-supabase-fill"></i>Moyenne</div>
+    <div class="item" (click)="onFocus2(1)"  [ngClass]="currentState2==1?'active1':''"> <i class="ri-menu-add-fill"></i>   Pas Urgent</div>
+
+  </div>
+
+ <div class="list-ticket">
+  <div *ngFor="let item of tickets">
+    <div class="item" *ngIf="(currentState=='Tous'||currentState==item.status)&&(currentState2==0 ||currentState2==item.urgence)" >
+      <img src="../../../assets/image/ticket.png" alt="">
+      <div class="info">
+        <h3 style="margin-bottom: 2px;">
+          {{item.titre}}
+        </h3>
+        <div class="name">
+          <span class="header"><i class="ri-calendar-fill"></i>Date ajout:</span>
+          <span>
+
+            {{item.date}}
+          </span>
+        </div>
+        <div class="name">
+          <span class="header"><i class="ri-alarm-warning-line"></i>Urgence:</span>
+          <span>
+            {{item.urgenceLabel}}
+          </span>
+        </div>
+        <div class="name">
+          <span class="header"><i class="ri-alarm-warning-line"></i>Status:</span>
+          <span>
+
+            {{item.status}}
+          </span>
+        </div>
+        <div class="name">
+          <span class="header"><i class="ri-red-packet-line"></i>Categorie:</span>
+          <span>
+
+            {{item.categorie}}
+          </span>
+        </div>
+      </div>
+
+      <div class="action">
+        <span routerLink="/details-tickets/{{item.id}}" class="btn"><i class="ri-information-line"></i>info</span>
+        <span routerLink="/attribution/{{item.id}}/1" class="btn"><i class="ri-edit-box-line"></i>modifier</span>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+.container-fluid{
+  margin-top: 100px;
+
+  .search{
+    // background-color: red;
+    max-width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: auto;
+    justify-content: space-between;
+    input{
+      padding: 16px;
+      width: 500px;
+      border-radius: 12px;
+
+      &:focus{
+       border: 1px solid red;
+      }
+    }
+    select{
+      border-radius: 4px;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    button{
+      background-color: rgb(33, 33, 50);
+      padding: 16px;
+      border-radius: 8px;
+      color: white;
+    }
+    label{
+      display: flexbox;
+      position: relative
+      ;
+      top: 12px;
+    }
+  }
+  .type{
+
+    min-width: 270px;
+    // height: 78px;
+    max-width: 70vw;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 18px;
+    border-radius: 8px;
+    padding: 18px;
+
+    justify-content: space-evenly;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.356);
+    .item{
+      height: 48px;
+      min-width: 150px;
+      // background-color: rgb(255, 255, 255);
+
+      box-shadow: 0 0 1px rgba(214, 209, 209, 0.178);
+      border-radius:33px;
+      // color: rgb(41, 119, 116);
+      cursor: pointer;
+      padding: 14px;
+      text-align: center;
+      transition: background-color 500ms linear;
+
+        // margin: 12px;
+      &:hover{
+        background-color: rgb(42, 42, 64);
+        color: white;
+
+      }
+
+
+
+
+
+    }
+  }
+  .categorie{
+
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+  }
+  .list-ticket{
+    display: flex;
+    flex-wrap: wrap;
+   justify-items: center;
+   justify-content: space-evenly;
+   align-self: self-start;
+   justify-items: start ;
+   justify-content: start;
+
+    grid-template-columns: repeat(auto-fill,400px);
+    // background-color: red;
+    max-width: 1200px;
+    margin:auto;
+    padding: auto;
+
+    .item {
+        // height: 98px;
+        width: 300px;
+        // border: 1px solid black;
+        border-radius: 4px;
+        margin: 16px;
+
+
+        box-shadow: 0 0 2px rgba(212, 210, 210, 0.579);
+        background-color: white;
+        padding: 22px;
+        // display: flexbox;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.9s ease;
+        img{
+          &::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+          }
+        }
+        .name{
+          border-bottom: 1px solid rgba(199, 192, 192, 0.408);
+          padding: 8px;
+          display: flex;
+          justify-content: space-between;
+          &:first{
+            color: red;
+          }
+          &:last-child{
+            border: none;
+          }
+          .header{
+            font-weight: bolder;
+            color: rgb(35, 35, 45);
+
+          }
+        }
+        &:hover{
+          background-color: rgb(187, 207, 187);
+          cursor: pointer;
+
+          // color: white;
+        }
+        h3{
+          font-weight: bolder;
+        }
+        .info{
+          display: flexbox;
+        }
+        .action{
+          position: relative;
+          // top: 18px;
+          display: flex;
+          justify-content: center;
+         align-items: center;
+          vertical-align: auto;
+
+          height: 35px;
+        }
+      }
+
+  }
+
+
+}
+
+.search-group{
+  display: flex;
+  margin: 4px auto;
+  justify-content: center;
+  input{
+    border: 2px solid rgba(102, 99, 99, 0.422);
+  }
+  .select{
+    // padd ing: 18px;
+    border-radius: 22px;
+
+
+  }
+  select{
+    padding: 20px;
+    background-color: rgb(94, 55, 236);
+    border: 1px solid white;
+    border-radius: 22px;
+    transform: translateX(-100%);
+
+    width: 100%;
+    option{
+      padding: 22 px;
+    }
+    &:focus{
+      background-color: white;
+    }
+  }
+}
+
+
+
+.btn{
+  background-color: rgb(34, 37, 43);
+  width: 100%;
+  padding: 8px;
+  border-radius: 30px;
+  margin: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  transition: scale 300ms ease;
+  &:hover{
+    scale: 1.02;
+  }
+}
+
+
+@media only screen and (min-width:600px) {
+
+  .type {
+
+      // width: 56vw;
+      height: 78px;
+      background-color: rgb(255, 255, 255);
+      margin: auto;
+      // margin-top: 18px;
+      border-radius: 8px;
+      padding: 18px;
+      display: flex;
+      justify-content: space-evenly;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.356);
+
+      .iem{
+        margin-top: 0px;
+      }
+      .search{
+        flex-direction: column;
+        background-color: red;
+      }
+
+
+    }
+
+}
+

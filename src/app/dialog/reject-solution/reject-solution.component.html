@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>
+    Modification d'utilisateur
+  </h3>
+  <form [formGroup]="fg!">
+    <div class="input-group">
+      <label for="">Nouvelle description</label>
+      <textarea name="" id="" cols="15" rows="3" formControlName="description"></textarea>
+    </div>
+    <div class="input-group">
+      <label for="">Status</label>
+      <select  id="" formControlName="status">
+        <option [value]="item" *ngFor="let item of service.status" >
+          {{item}}
+        </option>
+      </select>
+    </div>
+
+    <div class="group-btn">
+      <button (click)="update()"> Modifier</button><button >Annuler</button>
+    </div>
+  </form>
+</div>

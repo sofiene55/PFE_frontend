@@ -1,0 +1,51 @@
+.social-media{
+  box-shadow: 0 0 10px silver;
+  border-radius: 16px;
+  background-color: white;
+  a{
+
+    color: black;
+    transition: 205ms  background-color linear;
+    &:hover{
+      background-color: rgb(129, 129, 167);
+      border-radius: 12px;
+      color: white;
+    }
+  }
+}
+
+.listener{
+  color: rgb(22, 22, 79);
+}
+
+.contact{
+  background-color: whitesmoke;
+  border: none;
+  box-shadow: 0 0 10px silver;
+  border-radius: 12px;
+  padding: 36px;
+
+  input{
+    background-color: white;
+    padding:12px;
+    border-radius: 8px;
+    border: 1px solid rgba(192, 192, 192, 0.315);
+  }
+  label{
+    color: black;
+  }
+
+  textarea{
+    background-color: white;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(192, 192, 192, 0.315);
+  }
+
+  button{
+    background-color: rgb(109, 109, 166);
+    border-radius: 8px;
+    border: none;
+    color: white;
+  }
+}

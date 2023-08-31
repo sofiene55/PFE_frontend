@@ -1,0 +1,129 @@
+.container{
+
+  justify-content: space-evenly;
+  margin-top: 30px;
+  align-items: start;
+
+  .state{
+
+  }
+  .list-tache{
+    max-height: 500px;
+    padding: 12px;
+
+    .body{
+
+      overflow-y: scroll;
+    }
+    .item{
+      padding: 8px ;
+      border: 1px solid rgba(168, 166, 166, 0.501);
+      min-width: 230px;
+      margin: 6px;
+      border-radius: 26px;
+      display: flex;
+      justify-content: space-between;
+      i{
+        cursor: pointer;
+        padding: 2px;
+        // border: 1px solid black;
+
+        color: rgb(40, 170, 49);
+        border-radius: 22px;
+
+        &:last-child{
+          color: red;
+        }
+      }
+    }
+  }
+  .contenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 22vw;
+    min-width: 300px;
+    box-shadow: 0 0 1px silver;
+    background-color: white;
+    border-radius: 14px;
+    padding: 22px;
+    height: auto;
+    margin-bottom: 18px;
+
+
+
+    .asset{
+
+      justify-content: center;
+
+      // margin: auto;
+
+    }
+    .span{
+      border: 1px solid rgba(215, 212, 212, 0.356);
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      span{
+        margin-right: 8px;
+
+      }
+    }
+    .btn{
+      display: flex;
+      margin: 12px auto;
+      .primary-btn {
+          padding: 12px;
+          background-color: red;
+          color: white;
+          margin: auto;
+          border-radius: 8px;
+          display: flex;
+          justify-content: space-between;
+          transition: scale 500ms ease;
+          &:hover{
+            scale: 1.05;
+          }
+
+        }
+    }
+
+    button{
+      background-color: rgb(36, 72, 140);
+      color: white;
+      padding: 8px;
+      margin: 12px;
+
+      border-radius: 6px;
+    }
+
+  }
+  .container-1{
+    max-height: 80vh;
+
+  }
+}
+
+@media only screen and (min-width:800px)  {
+  .container{
+    display: flex;
+
+  }
+
+  .container-1{
+    max-height: 80vh;
+    // &::after{
+    //   content: "";
+    //   display: block;
+    //   background-color: rgb(34, 31, 51);
+    //   position: relative;
+    //   top: -50%;
+    //   left: 100%;
+    //   width: 300px;
+    //   height: 5px;
+    //   border-radius: -22px;
+    //   z-index: -10;
+    // }
+  }
+
+}

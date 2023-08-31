@@ -1,0 +1,27 @@
+
+<div class="container">
+
+
+  <div class="contenu">
+    <h2>
+      Confirmation du compte
+    </h2>
+    <i class="ri-checkbox-circle-line i"></i>
+    <div class="input">
+      <label for="">Email</label>
+      <input type="text" placeholder="coller ici le mot de passe envoyé par mail" formControlName="email" #email>
+    </div>
+    <div class="input">
+      <label for="">Mot de passe confirmation</label>
+      <input type="text" placeholder="coller ici le mot de passe envoyé par mail" formControlName="pwd" #pwd>
+    </div>
+    <div class="error" *ngIf="error">
+      <i class="ri-error-warning-fill"></i>
+      <span>Echec de confirmation </span>
+    </div>
+    <button (click)="onConfirm(email.value,pwd.value)">
+      Confirmer
+    </button>
+  </div>
+
+</div>
